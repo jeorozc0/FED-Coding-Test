@@ -1,3 +1,4 @@
+import { DeviceDetail, TrendData } from '../types';
 
 export const fetchData = async <T>(endpoint: string, params: Record<string, string> = {}): Promise<T> => {
   try {
@@ -24,4 +25,22 @@ export const fetchData = async <T>(endpoint: string, params: Record<string, stri
     console.error('Fetch error:', error);
     throw error;
   }
+};
+
+export const getSiteDetails = (deviceId: string): Promise<DeviceDetail> => {
+  return fetchData<DeviceDetail>('/device/detail', { id: deviceId });
+};
+
+export const getTemperatureData = (
+  deviceId: string,
+  startDate: string,
+  endDate: string
+): Promise<TrendData> => {
+  return fetchData<TrendData>('/trend', {
+    id: deviceId,
+    type: 'TAvg',
+    start: startDate,
+    end: endDate,
+    gran: 'Hourly'
+  });
 };

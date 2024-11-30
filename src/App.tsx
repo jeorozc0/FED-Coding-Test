@@ -1,22 +1,17 @@
-import { useSiteDetails, useTemperatureData } from "./hooks/useDataFetch";
+import './App.css';
+import SiteInfo from './components/site-info/site-info';
 
 function App() {
-  const { data, loading, error } = useSiteDetails('ND00001095');
-  const { data: t, loading: l, error: e } = useTemperatureData(
-    'ND00001095',
-    '2021-03-01',
-    '2021-04-01'
-  );
-  console.log(data)
-  console.log(t)
-
   return (
-    <>
-      <div>
-        Hello
-      </div>
-    </>
-  )
+    <div className="app">
+      <header className="app-header">
+        <h1>Device Monitoring Dashboard</h1>
+      </header>
+      <main className="app-content">
+        <SiteInfo />
+      </main>
+    </div>
+  );
 }
 
-export default App
+export default App;

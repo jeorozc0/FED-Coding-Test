@@ -20,7 +20,9 @@ export interface Device {
 
 export interface DeviceDetail {
   device: Device;
-  site: Site;
+  group: {
+    site: Site;
+  }
 }
 
 export interface Sample {
