@@ -1,5 +1,5 @@
 import './App.css';
-import SiteInfo from './components/site-info/site-info';
+import SiteInfo from './components/device-info/device-info';
 
 function App() {
   return (
