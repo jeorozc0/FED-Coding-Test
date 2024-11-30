@@ -9,13 +9,13 @@ export interface Site {
 }
 
 export interface Device {
-  deviceid: string;
+  deviceId: string;
   status: string;
   grade: string;
-  lastdatareceived: string;
-  friendlyname: string;
-  statuslastupdated: string;
-  latestfirmwareversion: string;
+  lastDataReceived: string;
+  friendlyName: string;
+  statusLastUpdated: string;
+  latestFirmwareVersion: string;
 }
 
 export interface DeviceDetail {
