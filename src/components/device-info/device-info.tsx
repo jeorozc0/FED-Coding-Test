@@ -1,6 +1,6 @@
 // src/components/SiteInfo/SiteInfo.tsx
 import { useSiteDetails } from '../../hooks/useDataFetch';
-import { formatDate } from '../../utils/dateUtils';
+import { formatReadableDate } from '../../utils/dateUtils';
 import './styles.css';
 
 function SiteInfo() {
@@ -50,7 +50,7 @@ function SiteInfo() {
           <div className="info-item">
             <span className="info-label">Last Updated: </span>
             <span className="info-value">
-              {formatDate(device.statusLastUpdated)}
+              {formatReadableDate(device.statusLastUpdated)}
             </span>
           </div>
         </div>
