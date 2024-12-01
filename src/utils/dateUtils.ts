@@ -1,24 +1,16 @@
-export const formatDate = (dateString: string): string => {
+export function formatReadableDate(
+  isoDate: string,
+  locale: string = 'en-US',
+  options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' }
+): string {
   try {
-    // Parse ISO 8601 date string
-    const date = new Date(dateString);
-
-    // Check if date is valid
+    const date = new Date(isoDate);
     if (isNaN(date.getTime())) {
-      return 'Invalid Date';
+      throw new Error("Invalid ISO date string");
     }
-
-    // Format the date
-    return date.toLocaleString('en-US', {
-      year: 'numeric',
-      month: 'numeric',
-      day: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit',
-      timeZoneName: 'short'
-    });
-  } catch {
-    return 'Invalid Date';
+    return date.toLocaleDateString(locale, options);
+  } catch (error) {
+    console.error("Error formatting date:", error);
+    return '';
   }
-};
+}
