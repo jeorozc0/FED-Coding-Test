@@ -1,50 +1,75 @@
-# React + TypeScript + Vite
+# Device Monitoring Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This project implements a **Device Monitoring Dashboard** using React, TypeScript, and Vite. It retrieves and displays device and temperature data for monitoring purposes. The application demonstrates clean architecture, reusable hooks, and responsive design, prioritizing maintainability and performance.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Key Features
 
-## Expanding the ESLint configuration
+- **Device Information Display**: Displays detailed information about the device and its associated site.
+- **Temperature Data Table**: Provides hourly average temperature data over a specific date range.
+- **Reusable Hooks**: Utilizes `useDataFetch` for API data retrieval, promoting modularity.
+- **Optimized API Integration**: Efficient API calls through a centralized service layer with error handling.
+- **Responsive Design**: Adapts to different screen sizes for seamless usage on various devices.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Key Decisions and Optimizations
 
-- Configure the top-level `parserOptions` property like this:
+1. **React + Vite for Development**:
+   - Chosen for fast development and HMR (Hot Module Replacement).
+   - SWC (Speedy Web Compiler) plugin for efficient React transpilation.
+2. **Component-based Architecture**:
+   - Modular components for `SiteInfo` and `TemperatureTable`.
+   - Centralized hooks for API interaction.
+3. **Styling**:
+   - Scoped CSS for each component to avoid conflicts.
+   - Responsive layouts using CSS media queries.
+4. **TypeScript Integration**:
+   - Ensures type safety across the codebase.
+   - Includes comprehensive type definitions for API responses.
+5. **API Optimization**:
+   - Centralized service functions (`getSiteDetails` and `getTemperatureData`) to avoid redundancy.
+   - Dynamic query parameter handling for flexible data fetching.
+6. **Error Handling**:
+   - User-friendly error and loading states for each component.
+   - Graceful handling of missing or invalid data.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Project Timeline
+
+- **Expected Completion**: 2 hours
+- **Actual Completion**: 1 hour and 40 minutes
+
+Time was saved on the styling of the components, and the handling of data thanks to typescript types.
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js and npm installed.
+- Environment variables configured for API keys and base URL in a `.env` file.
+
+### Installation
+
+1. Clone the repository.
+2. Install dependencies:
+
+```bash
+npm install
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+3. Start the development server:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+npm run dev
 ```
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+## Possible Improvements
+
+- Implement unit tests for hooks and components.
+- Add more granular filtering options for temperature data.
+- Include a dark mode for better accessibility.
