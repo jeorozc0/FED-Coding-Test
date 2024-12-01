@@ -1,0 +1,100 @@
+
+.temperature-table {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  width: 100%;
+  margin-top: 24px;
+}
+
+.temperature-table h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.date-range {
+  color: #6b7280;
+  margin-bottom: 24px;
+}
+
+.table-container {
+  overflow-y: auto;
+  max-height: 400px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+  background-color: #f9fafb;
+  z-index: 2;
+  border-bottom: 2px solid #e5e7eb;
+  padding: 12px;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+tbody td {
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+td.temperature {
+  font-family: monospace;
+  text-align: right;
+}
+
+tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32px;
+  width: 100%;
+  color: #6b7280;
+}
+
+.error {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 16px;
+  color: #b91c1c;
+  width: 100%;
+}
+
+.warning {
+  background-color: #fffbeb;
+  border: 1px solid #fef3c7;
+  border-radius: 8px;
+  padding: 16px;
+  color: #92400e;
+  width: 100%;
+}
+
+/* Add responsiveness */
+@media (max-width: 768px) {
+  .temperature-table {
+    padding: 16px;
+  }
+
+  .temperature-table h2 {
+    font-size: 20px;
+  }
+
+  th, td {
+    padding: 8px;
+  }
+}
+
