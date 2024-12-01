@@ -1,4 +1,3 @@
-// src/components/SiteInfo/SiteInfo.tsx
 import { useSiteDetails } from '../../hooks/useDataFetch';
 import { formatReadableDate } from '../../utils/dateUtils';
 import './styles.css';
