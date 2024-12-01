@@ -1,5 +1,6 @@
 import './App.css';
 import SiteInfo from './components/device-info/device-info';
+import TemperatureTable from './components/temp-table/temp-table';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       </header>
       <main className="app-content">
         <SiteInfo />
+        <TemperatureTable />
       </main>
     </div>
   );
